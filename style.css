@@ -7,3 +7,12 @@
   font-weight: <weight>;
   font-style: normal;
 } */
+
+:root {
+  --primary-color: red;
+
+}
+
+body {
+  background-color: var(--primary-color);
+}
