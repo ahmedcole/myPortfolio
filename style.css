@@ -1,12 +1,5 @@
-/* // <weight>: Use a value from 100 to 900
-// <uniquifier>: Use a unique and descriptive class name
-
-.epilogue-<uniquifier> {
-  font-family: "Epilogue", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-} */
+/* <weight>: Use a value from 100 to 900 */
+/* <uniquifier>: Use a unique and descriptive class name */
 
 * {
   padding: 0;
@@ -17,11 +10,20 @@ ul,
 ol {
   list-style: none;
 }
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
 :root {
   /* color */
+  --body-color: hsla(243, 22%, 41%, 0.344);
   --primary-color: #6c63ff;
+  --secondary-color: #ffe492;
   --background-color: #ffffff;
   --text-primary: #2d2d2d;
+  --text-hover: #8a84ff;
+  /* --text-hover:  #A8A3FF; */
 
   /* font-weight */
   --weight-thin: 100;
@@ -33,6 +35,14 @@ ol {
   --weight-bold: 700;
   --weight-extra-bold: 800;
   --weight-black: 900;
+}
+
+body {
+  background-color: var(--body-color);
+  font-family: "Epilogue", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: var(--text-primary);
 }
 
 /* reusuable component */
@@ -51,50 +61,64 @@ ol {
   margin: 0px auto;
 }
 
-/* text  */
+/* Specific classes for different text elements */
 .text-logo {
-  font-family: "Epilogue", serif;
   font-size: 1.2rem;
   font-weight: var(--weight-semi-bold);
-  font-style: normal;
   line-height: 1.875rem;
-  color: var(--text-primary);
 }
+
 .text-nav {
-  font-family: "Epilogue", serif;
+  color: var(--text-primary);
   font-size: 1.0625rem;
   font-weight: var(--weight-semi-bold);
-  font-style: normal;
   line-height: 5.625rem;
-  color: var(--text-primary);
+}
+
+.card-title {
+  font-size: 1.6875rem;
+  font-weight: var(--weight-semi-bold);
+  line-height: 2.625rem;
+}
+
+.card-paragraph {
+  font-size: 1.0625rem;
+  font-weight: var(--weight-regular);
+  line-height: 1.6875rem;
 }
 
 .display {
-  font-family: "Epilogue", serif;
   font-size: 5rem;
   font-weight: var(--weight-semi-bold);
-  font-style: normal;
   line-height: 5.625rem;
-  color: var(--text-primary);
 }
+
+.section-title {
+  font-size: 2rem;
+  font-weight: var(--weight-semi-bold);
+  line-height: 2.625rem;
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
 .paragraph {
-  font-family: "Epilogue", serif;
   font-size: 1.0625rem;
   font-weight: var(--weight-regular);
-  font-style: normal;
   line-height: 1.6875rem;
-  color: var(--text-primary);
 }
 
-body {
-  background-color: gray;
-}
+/* end here */
 
+.body-container {
+  padding-bottom: 5rem;
+}
+/* navigation start here */
 .nav-bar {
   padding: 1.5625rem 3.125rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: var(--text-primary) 1px solid;
 }
 
 .nav-bar ul {
@@ -102,6 +126,13 @@ body {
   align-items: center;
   gap: 3.125rem;
 }
+.nav-bar a.text-nav:hover {
+  color: var(--text-hover);
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+/* end here */
 
 .hero-container {
   padding-block: 6.25rem;
@@ -116,15 +147,85 @@ body {
   width: 34.8125rem;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1rem;
 }
 
 .hero-image {
   width: 30.9375rem;
-  height: 424px;
+  height: 26.5rem;
 }
 
 .hero-image img {
   width: 100%;
   height: 100%;
+}
+
+/* .container-tools {
+  padding-inline: 3.125rem;
+} */
+.container-tools ul {
+  width: 67.375rem;
+  margin: 3.75rem auto;
+  padding-block: 3.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-block: 2px var(--text-primary) solid;
+}
+
+.tools-img {
+  max-width: 7.5rem;
+  width: 7.5rem;
+}
+.tools-img img {
+  max-width: 100%;
+  width: 100%;
+}
+
+.services-container {
+  width: 72.625rem;
+  margin: 3.75rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service {
+  width: 22.875rem;
+  min-width: 22.875rem;
+  height: 27.5rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 1.875rem;
+  border-radius: 8px;
+  border: 4px var(--secondary-color) solid;
+}
+
+.service .card-image {
+  width: 7.5rem;
+  height: 7.5rem;
+}
+.card-image svg {
+  width: 100%;
+  height: 100%;
+}
+
+.card-text {
+  margin-top: 1rem;
+}
+
+.card-text p {
+  margin-top: 8px;
+}
+
+.service:hover {
+  border: none;
+  color: var(--background-color);
+  background-color: var(--text-hover);
+  /* background-color: var(--primary-color); */
+  transition: background-color 0.3s ease-in-out;
 }
