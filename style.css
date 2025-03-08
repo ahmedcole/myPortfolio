@@ -21,6 +21,8 @@ a {
   --body-color: hsla(243, 22%, 41%, 0.344);
   --primary-color: #6c63ff;
   --secondary-color: #ffe492;
+  --secondary-card-color: #fffcf5;
+  --secondary-card-stroke-color: #ffd285;
   --background-color: #ffffff;
   --text-primary: #2d2d2d;
   --text-hover: #8a84ff;
@@ -55,12 +57,14 @@ body {
   /* max-width: 90.125rem; */
   background-color: var(--background-color);
   margin: 0px auto;
+
 }
 .containerX {
   width: 67.5rem;
   /* max-width: 90.125rem; */
   background-color: var(--background-color);
   margin: 0px auto;
+
 }
 
 /* Specific classes for different text elements */
@@ -109,6 +113,10 @@ body {
   padding-bottom: 5rem;
 }
 /* navigation start here */
+nav.containerXL {
+  position: fixed;
+  z-index: 1000;
+}
 .nav-bar {
   padding: 1.5625rem 3.125rem;
   display: flex;
@@ -233,6 +241,7 @@ body {
 /* portfolio section start here */
 .portfolio-container {
   padding-top: 6.25rem;
+ 
 }
 
 .portfolio-lists {
@@ -258,3 +267,49 @@ body {
 }
 
 /* Testimonials section start here */
+
+.testimonial {
+  padding-top: 6.25rem;
+
+}
+
+ul.testimonial-lists {
+  width: 67.5rem;
+  margin: 0 auto;
+  margin-top: 3.4375rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 9.375rem;
+  border-bottom: 3px var(--border-line) solid;
+}
+
+.testimonial-item {
+  background-color: var(--secondary-card-color);
+  min-width: 19.6875rem;
+  width: 19.6875rem;
+  /* height: 32.75rem; */
+  padding: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  border: 1.5px var(--secondary-card-stroke-color) solid;
+  border-radius: 8px;
+}
+.testimonial-profile {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.testimonial-img {
+  width: 3.125rem;
+  height: 3.125rem;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-text img {
+  width: 7.5rem;
+  height: 1.25rem;
+  margin-bottom: 0.625rem;
+}
