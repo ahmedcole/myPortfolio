@@ -1,76 +1,26 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
+/* Basic styles for navigation */
+nav ul {
   list-style: none;
-}
-
-nav {
-  width: 80%;
   display: flex;
-  justify-content: space-between;
-  margin: 30px auto;
-}
-
-.links {
-  display: flex;
-  justify-content: space-between;
   gap: 20px;
 }
-.dropdown {
-  position: relative;
+
+nav a {
+  text-decoration: none;
+  padding: 10px 15px;
+  color: black;
+  transition: 0.3s;
 }
 
-.contact {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-bottom: 6px;
+/* Active home button (default look) */
+.home.active {
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
 }
 
-.dropdown-menu {
-  position: absolute;
-  min-width: 150px;
-  background-color: #150e0e;
-  margin-top: 10px;
-  padding: 6px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  /* display: none; */
+/* When any link except Home is hovered, change the Home button style */
+nav a:not(.home):hover ~ .home.active {
+  background-color: gray;
+  color: black;
 }
-
-.dropdown-menu::after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 10px solid red;
-  /* border-bottom-color: red; */
-}
-/* .dropdown-menu a {
-  color: whitesmoke;
-}
-.dropdown-menu a:hover {
-  padding-inline: 2px;
-  display: block;
-  background-color: whitesmoke;
-  color: #150e0e;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown:hover .contact svg {
-  transform: rotate(180deg);
-} */

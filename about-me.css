@@ -105,10 +105,24 @@ body {
   font-weight: var(--weight-regular);
   line-height: 1.6875rem;
 }
+.about-h5 {
+  font-size: 1.0625rem;
+  font-weight: var(--weight-bold);
+  line-height: 1.6875rem;
+}
+.about-details-h5 {
+  font-size: 1.5rem;
+  font-weight: var(--weight-medium);
+  line-height: 2.25rem;
+}
+.about-details-p {
+  font-size: 1rem;
+  font-weight: var(--weight-semi-bold);
+  line-height: 1.625rem;
+}
 
 /* end here */
 
-/* navigation start here */
 /* navigation start here */
 nav.containerXL {
   position: fixed;
@@ -117,7 +131,6 @@ nav.containerXL {
   color: var(--background-color);
 }
 .nav-bar {
-  /* padding: 0 3.125rem; */
   padding: 0 10%;
   display: flex;
   justify-content: space-between;
@@ -150,7 +163,6 @@ nav.containerXL {
   align-items: flex-start; /* Align items to the start of the container */
   flex-direction: column;
   text-align: left;
-  /* color: #fffcf5; */
   color: var(--text-primary);
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -231,7 +243,6 @@ nav.containerXL {
   padding-inline: 10%;
 }
 .container-tools ul {
-  /* width: 67.375rem; */
   margin: 3.75rem auto;
   padding-block: 3.75rem;
   display: flex;
@@ -243,8 +254,6 @@ nav.containerXL {
 .tools-img {
   max-width: 4rem;
   width: 4rem;
-  /* max-width: 7.5rem;
-  width: 7.5rem; */
 }
 .tools-img img {
   max-width: 100%;
@@ -348,7 +357,6 @@ ul.testimonial-lists {
   background-color: var(--secondary-card-color);
   min-width: 19.6875rem;
   width: 19.6875rem;
-  /* height: 32.75rem; */
   padding: 1.875rem;
   display: flex;
   flex-direction: column;
@@ -375,7 +383,6 @@ ul.testimonial-lists {
   margin-bottom: 0.625rem;
 }
 
-/* navigation start here */
 /* navigation start here */
 nav.containerXL {
   position: fixed;
@@ -451,7 +458,6 @@ nav.containerXL {
 }
 .dropdown:hover .dropdown-container {
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-  /* color: var(--text-hover); */
   color: hsla(0, 0%, 100%, 0.7);
 }
 
@@ -466,12 +472,11 @@ nav.containerXL {
 }
 /* end here */
 
-
-
 /* end here */
 
 .about-container {
   padding-block: 7.5rem;
+  padding-top: 10rem;
   background-color: var(--about-me-background-color);
 }
 .about-me {
@@ -483,11 +488,13 @@ nav.containerXL {
   padding: 2rem 0;
 }
 
+
 .about-image img {
   width: 12.1875rem;
   height: 12.1875rem;
   object-fit: cover;
   object-position: center;
+  margin-bottom: 20px;
 }
 
 .about-text {
@@ -512,7 +519,6 @@ nav.containerXL {
   background-color: var(--text-background);
   font-weight: var(--weight-semi-bold);
 }
-/* contact section start here */
 
 /* contact section start here */
 
@@ -623,3 +629,5 @@ footer.containerXL {
   color: var(--secondary-color);
 }
 
+
+/*# sourceMappingURL=about-me.css.map */
