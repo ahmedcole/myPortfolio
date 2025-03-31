@@ -233,4 +233,9 @@ body {
   padding-block: 80px;
   color: var(--text-white);
 }
+
+
+.portfolio-item-1  .portfolio-title{
+  display: flex;
+}
 /* portfolio website end here */
