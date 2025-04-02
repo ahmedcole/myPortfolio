@@ -1,26 +1,17 @@
-/* Basic styles for navigation */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: dodgerblue;
+  padding: 10px;
 }
+.container div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;}
 
-nav a {
-  text-decoration: none;
-  padding: 10px 15px;
-  color: black;
-  transition: 0.3s;
-}
-
-/* Active home button (default look) */
-.home.active {
-  background-color: blue;
-  color: white;
-  border-radius: 5px;
-}
-
-/* When any link except Home is hovered, change the Home button style */
-nav a:not(.home):hover ~ .home.active {
-  background-color: gray;
-  color: black;
-}
+  .one:nth-child(1) ~ .one:hover {
+    background-color: red;
+    color: black;
+  }
