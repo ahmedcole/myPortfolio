@@ -32,9 +32,6 @@
   --weight-extra-bold: 800;
   --weight-black: 900;
 }
-* {
-  /* border: 1px solid red; Highlights all elements */
-}
 
 * {
   padding: 0;
@@ -79,7 +76,7 @@ ul {
   font-weight: var(--weight-regular);
 }
 
-h1 {
+.h1 {
   font-size: 4rem;
   font-weight: var(--weight-bold);
 }
@@ -135,12 +132,17 @@ body {
   background-color: var(--white-color);
 }
 
-.nav-bar ul {
+.nav-bar .nav-list {
   display: flex;
   justify-content: space-between;
   color: var(--primary-color);
 }
 
+.nav-list-2 {
+  display: flex;
+  justify-content: space-between;
+  color: var(--primary-color);
+}
 .nav-bar a {
   display: inline-block;
   padding: 16px 24px;
@@ -212,7 +214,8 @@ body {
 }
 
 .about-text p:nth-of-type(2) {
-  margin-block: 16px;
+  margin-top: 16px;
+  margin-bottom: 40px;
 }
 
 .about-text a {
@@ -233,6 +236,7 @@ body {
 .about-image {
   max-width: 357px;
   border-radius: 16px;
+  margin-left: 16px;
 }
 
 .about-image img {
@@ -263,10 +267,16 @@ body {
   gap: 24px;
 }
 
+/* Default styles for portfolio items */
+
+
 .portfolio h2 {
   margin-bottom: 20px;
 }
 .portfolio-item-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 632px;
   padding: 32px;
   border-radius: 16px;
@@ -322,6 +332,9 @@ body {
 /* first card end here */
 /* second card start here */
 .portfolio-item-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 464px;
   padding: 32px;
   border-radius: 16px;
@@ -344,6 +357,11 @@ body {
   color: var(--primary-color);
 }
 
+/* Default styles for portfolio items */
+.portfolio-item-1,
+.portfolio-item-2 {
+  padding: 32px; /* Default padding */
+}
 /* portfolio website end here */
 
 /* footer section start here  */
@@ -355,7 +373,6 @@ body {
 .connect-container {
   padding-top: 88px;
   padding-bottom: 104px;
-
   display: flex;
   color: var(--primary-color);
   justify-content: space-between;
@@ -387,8 +404,6 @@ body {
   background-color: var(--tag-color);
 }
 
-/* media query for small laptop size  */
-
 @media (max-width: 1150px) {
   .container-x {
     max-width: 1020px;
@@ -398,7 +413,76 @@ body {
   /* about me section start here  */
 
   .about-text {
-    max-width: 620px;
+    max-width: 640px;
   }
   /* about me section end here  */
+
+
+}
+
+
+
+
+@media (max-width: 1080px) {
+  .container-x {
+    max-width: 100%;
+    padding-inline: 14px;
+    /* border: 3px red solid; */
+  }
+
+  /* reusable classes */
+
+  .h1 {
+    font-size: 2.8rem;
+  }
+
+  /* hero section */
+
+  .hero p {
+    max-width: 480px;
+    font-size: 1.25rem;
+  }
+
+  /* about me section start here */
+
+  .about-text {
+    max-width: 580px;
+    padding-inline: 14px;
+  }
+
+  .portfolio-item-1,
+  .portfolio-item-2 {
+    padding: 18px; /* Reduced padding for smaller screens */
+  }
+
+}
+
+/* media query for small laptop size  */
+
+@media (max-width: 900px) {
+  .container-x {
+    max-width: 720px;
+    border: 3px red solid;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    line-height: 32px;
+  }
+  .about-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+  .about-text {
+    max-width: 100%;
+  }
 }
