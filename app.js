@@ -17,3 +17,12 @@ document.querySelectorAll(".nav-link").forEach((link) => {
     document.querySelector("#active").classList.add("active");
   });
 });
+
+document.querySelector(".hamburger").addEventListener("click", () => {
+  document.querySelectorAll(".line").forEach((line) => {
+    line.classList.toggle("change");
+  });
+
+  document.querySelector(".nav-list-2").classList.toggle("nav-list-2-toggle");
+  // .classList.toggle(".nav-list-2-toggle");
+});
