@@ -140,13 +140,23 @@ body {
 /* navigation bar start here */
 
 .nav-bar {
+  position: fixed;
+  transform: translateX(50%);
+  right: 50%;
+  z-index: 1000;
   margin: 0 auto;
   margin-top: 8px;
   padding: 8px;
   max-width: 550px;
   border-radius: 67px;
+  border: 3px var(--primary-color) solid;
   background-color: var(--white-color);
-  width: 100%; /* Avoid using 100vw */
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    transition: max-width 0.5s ease-in-out;
+
 }
 
 .nav-bar .nav-list {
@@ -182,6 +192,10 @@ body {
   color: var(--white-color);
 }
 
+.add-nav-js {
+ max-width: 1120px;
+  transition: max-width 0.5s ease-in-out;
+}
 .hamburger {
   width: 30px;
   height: 25px;
@@ -230,7 +244,7 @@ body {
 .hero {
   display: flex;
   justify-content: space-between;
-  padding-top: 88px;
+  padding-top: 160px;
   padding-bottom: 104px;
 }
 
@@ -426,35 +440,14 @@ body {
 
 /* testimonial section start here */
 .testimonial-section {
-  padding-block: 32px;
+  padding-block: 16px;
 }
 
 .testimonial {
   border-radius: 16px;
   padding: 32px;
   padding-block: 64px;
-  /* background-color: var(--white-color); */
   background: hsla(0, 0%, 97%, 1);
-  /* 
-  background: linear-gradient(
-    45deg,
-    hsla(0, 0%, 97%, 1) 0%,
-    hsla(258, 40%, 68%, 1) 100%
-  );
-
-  background: -moz-linear-gradient(
-    45deg,
-    hsla(0, 0%, 97%, 1) 0%,
-    hsla(258, 40%, 68%, 1) 100%
-  );
-
-  background: -webkit-linear-gradient(
-    45deg,
-    hsla(0, 0%, 97%, 1) 0%,
-    hsla(258, 40%, 68%, 1) 100%
-  );
-
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F7F7F7", endColorstr="#A18DCE", GradientType=1 ); */
   background: hsla(0, 0%, 97%, 1);
 
   background: radial-gradient(
@@ -483,22 +476,31 @@ body {
 }
 
 .wrapper {
-  height: 700px;
+  height: 500px;
   overflow: hidden;
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
 }
 
-.testimonial ul {
+.wrapper ul {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-width: 484px;
+  width: 484px;
+  height: 700px;
 }
 @keyframes slide {
-  from {
-    transform: translateY(0);
-  }
+  /* from{
+    bottom: -53%;
+  } */
   to {
-    transform: translateY(-100%);
+    transform: translateY(-1070px);
   }
 }
 .wrapper:hover .testimonial-card {
@@ -506,6 +508,8 @@ body {
 }
 
 .testimonial-card {
+  position: absolute;
+  bottom: -53%;
   background-color: var(--text-light-purple);
   max-width: 484px;
   padding: 16px;
@@ -516,9 +520,19 @@ body {
   gap: 16px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   animation-name: slide;
-  animation-duration: 10s;
+  animation-duration: 15s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+.testimonial-card:nth-of-type(1) {
+  animation-delay: calc((15s / 3 * (3 - 1) * -1));
+}
+.testimonial-card:nth-of-type(2) {
+  animation-delay: calc((15s / 3 * (3 - 2) * -1));
+}
+.testimonial-card:nth-of-type(3) {
+  animation-delay: calc((15s / 3 * (3 - 3) * -1));
 }
 
 .testimonial-image {
@@ -701,13 +715,26 @@ body {
   .connect-section p {
     max-width: 100%;
   }
+
+  /* testimonial section */
+
+  .testimonial {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .testimonial-text {
+    margin-bottom: 64px;
+  }
 }
 
 @media (max-width: 500px) {
   /* slider */
   .nav-bar {
     width: 100%;
-    position: relative;
+    position: fixed;
+    top: -4px;
     /* overflow-x: hidden; */
   }
   .nav-list-2 {
@@ -755,6 +782,7 @@ body {
   .display-hamburger {
     display: flex;
   }
+
   /* .hamburger {
     display: block;
   } */
@@ -765,5 +793,36 @@ body {
   }
   .social-media-grid {
     grid-template-columns: auto;
+  }
+
+  /* testimonial section  */
+  .testimonial-section {
+    padding-block: 32px;
+  }
+
+  .testimonial-text {
+    text-align: center;
+  }
+  .wrapper ul {
+    max-width: 310px;
+  }
+
+  .testimonial-card {
+    max-width: 310px;
+  }
+
+  .testimonial h4 {
+    font-size: 1.125rem;
+  }
+  .testimonial .paragraph-card-2 {
+    font-size: 0.8rem;
+  }
+  .testimonial .paragraph-card {
+    font-size: 12px;
+  }
+
+  /* connect section  */
+  .connect-container p {
+    font-size: 1.25rem;
   }
 }

@@ -26,3 +26,15 @@ document.querySelector(".hamburger").addEventListener("click", () => {
   document.querySelector(".nav-list-2").classList.toggle("nav-list-2-toggle");
   // .classList.toggle(".nav-list-2-toggle");
 });
+
+let scrollTimer;
+
+window.addEventListener("scroll", () => {
+  document.querySelector(".nav-bar").classList.add("add-nav-js");
+
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    document.querySelector(".nav-bar").classList.remove("add-nav-js");
+  }, 500);
+  
+});
