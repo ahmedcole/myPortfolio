@@ -37,6 +37,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
   /* overflow-x: hidden; */
 }
 
@@ -130,7 +131,9 @@ ul {
   background-color: var(--btn-primary-color);
   border-radius: 16px;
   padding: 8px 16px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
 /* Reusable class stop here */
 
 body {
@@ -303,6 +306,16 @@ body {
   border-right: 6px solid transparent;
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent; /* Arrow color */
+  transition: border-left 0.3s ease-in-out;
+}
+
+.about-text a:hover::after {
+  border-left: 6px solid var(--text-white);
+}
+
+.about-container .btn:hover {
+  background-color: var(--primary-color);
+  color: var(--text-white);
 }
 
 .about-image {
@@ -380,12 +393,16 @@ body {
 
 .portfolio-image {
   max-width: 100%;
+  max-height: 300px;
   border-radius: 16px;
   margin-top: 24px;
   margin-bottom: 16px;
+  overflow: hidden;
 }
 
 .portfolio-image img {
+  object-fit: cover;
+  object-position: center;
   width: 100%;
 }
 
@@ -825,5 +842,11 @@ body {
 
   .connect-container p {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .paragraph {
+    font-size: 14px;
   }
 }
